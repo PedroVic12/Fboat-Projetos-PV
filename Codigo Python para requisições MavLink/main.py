@@ -13,4 +13,4 @@ app = FastAPI()
 async def root():
     print('Script no terminal, --> uvicorn main:app --reload')
     print('Aperte enter para ligar o motor do barco')
-    return {"message": "Pedro Victor", 'idade': 24, 'status': 'Barco Ligado'}
+    return {"message": "Pedro Victor", 'status': 'Barco Ligado'}
