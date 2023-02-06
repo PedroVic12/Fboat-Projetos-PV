@@ -6,9 +6,11 @@ import random
 
 app = FastAPI()
 
-# Cria uma conexão MAVLink em modo leitura (comport)
+# TODO Cria uma conexão MAVLink em modo leitura (comport)
+
 
 @app.get("/")
 async def root():
-    print('Script no terminal,uvicorn main:app --reload  ,executado com sucesso ')
-    return {"message": "Pedro Victor", 'idade': 24}
+    print('Script no terminal, --> uvicorn main:app --reload')
+    print('Aperte enter para ligar o motor do barco')
+    return {"message": "Pedro Victor", 'idade': 24, 'status': 'Barco Ligado'}
