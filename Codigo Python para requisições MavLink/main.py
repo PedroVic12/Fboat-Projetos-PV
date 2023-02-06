@@ -1,8 +1,12 @@
 from fastapi import FastAPI
 import random
 
+
+#! Gerando uma requisição com a fastAPI
+
 app = FastAPI()
 
+# Cria uma conexão MAVLink em modo leitura (comport)
 
 @app.get("/")
 async def root():

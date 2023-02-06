@@ -26,7 +26,7 @@ async def root():
     }
     response = requests.post('http://example.com/data', data=data)
 
-    return {"message": "Pedro Victor", 'idade': 24}
+    return {"message": "Pedro Victor", 'idade': 24, 'info barco': 'barco ligado'}
 
 
 """
