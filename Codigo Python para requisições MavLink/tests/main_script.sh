@@ -1,7 +1,7 @@
 echo 'Iniciando Script...'
 
 echo 'Instalando as Depedencias...'
-python3 install-depedences.py 
+#python3 install-depedences.py 
 clear
 
 echo 'Iniciando a minha propria API.'
