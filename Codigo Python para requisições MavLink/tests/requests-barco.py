@@ -5,8 +5,6 @@ import time
 def fazendoRequisicao(url_request):
     response1 = requests.get(url_request)
     return response1
-    # my_data_request = response1.json()
-    # return my_data_request
 
 
 def conectandoMavlink():
@@ -57,8 +55,6 @@ if __name__ == '__main__':
     parametros = {'address': '1600 Amphitheatre Parkway, Mountain View, CA',
                   'key': 'SUA_CHAVE_API'}
 
-    # TODO COmo fazer requisição de uma resposta do Mavlink?
-
     #! Conectando com minha proria api da fastApi
     url = 'http://127.0.0.1:8000/'
     time.sleep(2)
@@ -67,5 +63,7 @@ if __name__ == '__main__':
     try:
         req = fazendoRequisicao(url)
         pegandoDadosBarco(req)
+        # TODO COmo fazer requisição de uma resposta do Mavlink?
+
     except:
         print('Erro na requisição')
