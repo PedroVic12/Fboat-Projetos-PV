@@ -1,0 +1,22 @@
+FROM python:3.9
+
+RUN apt-get update && apt-get install -y libxml2-dev libxslt-dev libjpeg-dev libfreetype6-dev zlib1g-dev
+
+WORKDIR /home/pedrov/Documentos/GitHub/Fboat-Projetos-PV/Codigo Python para requisições MavLink/container
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+RUN apt-get upgrade
+
+COPY . .
+
+EXPOSE 8080
+
+CMD [ "python", "connection_status.py" ]
+
+
+
+#! Comandos Terminal
+# Iniciar o docker -> systemctl start docker
+# Buildando a imagem -->  sudo docker build -t connection_status .
