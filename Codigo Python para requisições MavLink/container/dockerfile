@@ -4,8 +4,18 @@ RUN apt-get update && apt-get install -y libxml2-dev libxslt-dev libjpeg-dev lib
 
 WORKDIR /home/pedrov/Documentos/GitHub/Fboat-Projetos-PV/Codigo Python para requisições MavLink/container
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+#RUN python -m pip install --upgrade pip
+
+# Colocando as depedencias
+COPY bibliotecas.txt .
+RUN pip install --no-cache-dir -r bibliotecas.txt
+
+#RUN pip install --index-url=https://pypi.python.org/simple/ requests
+#RUN pip install --index-url=https://pypi.python.org/simple/ pymavlink
+
+#RUN pip install --index-url=https://pypi.python.org/simple/ -r bibliotecas.txt
+
+
 
 RUN apt-get upgrade
 
@@ -13,7 +23,7 @@ COPY . .
 
 EXPOSE 8080
 
-CMD [ "python", "connection_status.py" ]
+CMD [ "python3", "connection_status.py" ]
 
 
 
